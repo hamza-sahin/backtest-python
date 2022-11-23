@@ -1,4 +1,5 @@
 from strategy import DioscStrategy
+import time
 
 if __name__ == '__main__':
     strategy_diosc = DioscStrategy.DioscStrategy(
@@ -18,7 +19,9 @@ if __name__ == '__main__':
         long_tp = 0.75,
         short_sl = 5,
         short_tp = 0.75,
-        data_location= 'data\data-tv-backtest.csv')
+        data_location= "data/BINANCE_BTCUSDTPERP, 240.csv",
+        start_date = time.strptime("01/01/2022", "%d/%m/%Y"),
+        end_date = time.strptime("01/11/2022", "%d/%m/%Y"))
 
     strategy_diosc.backtest()
     print(strategy_diosc.balance)
